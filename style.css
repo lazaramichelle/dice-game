@@ -2,6 +2,35 @@
 *** GENERAL
 **********************************************/
 
+.final-score {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 540px;
+    color: #555;
+    font-size: 18px;
+    font-family: 'Lato';
+    font-weight: 400;
+    text-align: center;
+    padding: 10px;
+    width: 160px;
+    text-transform: uppercase;
+    border-style: solid;
+}
+
+.final-score:focus { outline: none; }
+
+#dice-1 { top: 120px; }
+#dice-2 { top: 250px; }
+
+#end-turn{
+    top: 250px;
+    left: 0;
+    right: 0;
+    position: absolute;
+    text-align: center;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -19,7 +48,7 @@ body {
     background-image: linear-gradient(rgba(62, 20, 20, 0.4), rgba(62, 20, 20, 0.4)), url(back.jpg);
     background-size: cover;
     background-position: center;
-    font-family: Lato;
+    font-family: 'Bubblegum Sans';
     font-weight: 300;
     position: relative;
     height: 100vh;
@@ -111,8 +140,8 @@ button {
     color: #555;
     background: none;
     border: none;
-    font-family: Lato;
-    font-size: 20px;
+    font-family: 'Cinzel Decorative';
+    font-size: 24px;
     text-transform: uppercase;
     cursor: pointer;
     font-weight: 300;
@@ -139,7 +168,7 @@ i {
 
 .btn-new { top: 45px;}
 .btn-roll { top: 403px;}
-.btn-hold { top: 467px;}
+.btn-collect { top: 467px;}
 
 .dice {
     position: absolute;
@@ -152,3 +181,69 @@ i {
 
 .winner { background-color: #f7f7f7; }
 .winner .player-name { font-weight: 300; color: #EB4D4D; }
+
+/**********************************************
+*** Rules
+**********************************************/
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+
+  /* Modal Header */
+.modal-header {
+    padding: 20px 16px;
+    background-color: rgb(177, 47, 7);
+    color: #fff;
+    font-size: 120%;
+    font-weight: 500;
+    font-family: 'Lato'
+  }
+  
+  /* Modal Body */
+  .modal-body {padding: 20px 16px;}
+  
+  /* Modal Content/Box */
+  /* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    animation-name: animatetop;
+    animation-duration: 0.4s
+  }
+  
+  /* Add Animation */
+  @keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #fff;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
